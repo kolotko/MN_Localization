@@ -2,43 +2,96 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+        .languageSection {
+            max-width: 300px;
+        }
+        
+        .flagContainer {
+                width: 210px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .flagIconPL {
+            width: 46px;
+            height: 30px;
+            display: block;
+            background-image: url('/Images/flaga_polski.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: none;
+        }
+        
+        .flagIconEN {
+            width: 46px;
+            height: 30px;
+            display: block;
+            background-image: url('/Images/flaga_angli.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: none;
+        }
+        
+        .flagIconDE {
+            width: 46px;
+            height: 30px;
+            display: block;
+            background-image: url('/Images/flaga_niemiec.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: none;
+        }
+        
+        .calendarContainer {
+            margin-bottom: 10px;
+        }
+        
+        .timePickerContainer {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function SetLanguageCookie(selectedLanguage) {
+          var expDate = new Date();
+          expDate.setDate(expDate.getDate() + 365); // Expiration 365 days from today
+          document.cookie = "langCookie=" + selectedLanguage + "; expires=" + expDate.toUTCString() + "; path=/";
+        }
+    </script>
     <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
-
-        <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
-        </div>
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+            <ContentTemplate>
+                <section class="languageSection">
+                    <div class="flagContainer">
+                        <asp:Button ID="btnPolish" runat="server" OnClientClick="SetLanguageCookie('pl')" CausesValidation="false" CssClass="flagIconPL" />
+                        <asp:Button ID="btnEnglish" runat="server" OnClientClick="SetLanguageCookie('en')" CausesValidation="false" CssClass="flagIconEN" />
+                        <asp:Button ID="btnDeuchland" runat="server" OnClientClick="SetLanguageCookie('de')" CausesValidation="false" CssClass="flagIconDE" />
+                    </div>
+                    
+                    <div class="calendarContainer">
+                        <asp:Calendar id="calendar" runat="server">
+                            <OtherMonthDayStyle ForeColor="LightGray"></OtherMonthDayStyle>
+                            <TitleStyle BackColor="LightGray" ForeColor="White"></TitleStyle>
+                            <DayStyle BackColor="LightGray"></DayStyle>
+                            <SelectedDayStyle BackColor="LightGray" Font-Bold="True"></SelectedDayStyle>
+                        </asp:Calendar>
+                    </div>
+                    <div class="timePickerContainer">
+                        <asp:TextBox ID="timePicker" runat="server" TextMode="Time"></asp:TextBox>
+                    </div>
+                    <div>
+                        <asp:Button ID="buttonCheck" runat="server" OnClick="OnClick" meta:resourcekey="buttonCheckResource"/>
+                    </div>
+                </section>
+                <section>
+                    <asp:Label ID="labelResult" runat="server"></asp:Label>
+                </section>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </main>
 
 </asp:Content>
