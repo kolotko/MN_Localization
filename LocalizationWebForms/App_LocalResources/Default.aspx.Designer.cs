@@ -67,5 +67,23 @@ namespace LocalizationWebForms.App_LocalResources {
                 return ResourceManager.GetString("buttonCheckResource.Text", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopka ustawiona statycznie.
+        /// </summary>
+        internal static string labelFooterResultResource {
+            get {
+                return ResourceManager.GetString("labelFooterResultResource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tytuł ustawiony przez Resource Manager.
+        /// </summary>
+        internal static string labelTitleResultResource {
+            get {
+                return ResourceManager.GetString("labelTitleResultResource", resourceCulture);
+            }
+        }
     }
 }

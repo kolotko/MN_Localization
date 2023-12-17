@@ -14,4 +14,10 @@
     <data name="buttonCheckResource.Text" xml:space="preserve">
         <value>Überprüfen</value>
     </data>
+    <data name="labelTitleResultResource" xml:space="preserve">
+        <value>Vom Ressourcenmanager festgelegter Titel</value>
+    </data>
+    <data name="labelFooterResultResource" xml:space="preserve">
+        <value>Die Fußzeile ist statisch festgelegt</value>
+    </data>
 </root>

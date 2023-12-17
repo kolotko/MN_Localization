@@ -88,7 +88,11 @@
                     </div>
                 </section>
                 <section>
+                    <asp:Label ID="labelTitleResult" runat="server"></asp:Label>
+                    <br>
                     <asp:Label ID="labelResult" runat="server"></asp:Label>
+                    <br>
+                    <asp:Label ID="labelFooterResult" runat="server"></asp:Label>
                 </section>
             </ContentTemplate>
         </asp:UpdatePanel>

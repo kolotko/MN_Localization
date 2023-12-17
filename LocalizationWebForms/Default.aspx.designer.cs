@@ -78,6 +78,15 @@ namespace LocalizationWebForms
         protected global::System.Web.UI.WebControls.Button buttonCheck;
 
         /// <summary>
+        /// labelTitleResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelTitleResult;
+
+        /// <summary>
         /// labelResult control.
         /// </summary>
         /// <remarks>
@@ -85,5 +94,14 @@ namespace LocalizationWebForms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label labelResult;
+
+        /// <summary>
+        /// labelFooterResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelFooterResult;
     }
 }

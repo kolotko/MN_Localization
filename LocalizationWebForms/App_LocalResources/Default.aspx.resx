@@ -21,4 +21,10 @@
     <data name="buttonCheckResource.Text" xml:space="preserve">
         <value>Sprawdź</value>
     </data>
+    <data name="labelTitleResultResource" xml:space="preserve">
+        <value>Tytuł ustawiony przez Resource Manager</value>
+    </data>
+    <data name="labelFooterResultResource" xml:space="preserve">
+        <value>Stopka ustawiona statycznie</value>
+    </data>
 </root>

@@ -14,4 +14,10 @@
     <data name="buttonCheckResource.Text" xml:space="preserve">
         <value>Check</value>
     </data>
+    <data name="labelTitleResultResource" xml:space="preserve">
+        <value>Title set by Resource Manager</value>
+    </data>
+    <data name="labelFooterResultResource" xml:space="preserve">
+        <value>The footer is statically set</value>
+    </data>
 </root>
